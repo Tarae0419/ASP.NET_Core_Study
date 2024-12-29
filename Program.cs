@@ -1,4 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using ServerStudy.DataBase;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<UserData>(options =>
+    options.UseMySql(
+        "Server=localhost;Database=UserData;User=root;Password=1234;",
+        new MySqlServerVersion(new Version(8, 0, 32))
+    ));
 
 // Add services to the container.
 builder.Services.AddRazorPages();
