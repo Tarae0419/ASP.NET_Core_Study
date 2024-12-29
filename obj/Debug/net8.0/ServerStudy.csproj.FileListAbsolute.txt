@@ -33,16 +33,7 @@ C:\Users\park\Desktop\ServerStudy\obj\Debug\net8.0\ServerStudy.sourcelink.json
 C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\MySqlConnector.dll
 C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\park\Desktop\ServerStudy\bin\Debug\net8.0\System.Security.Permissions.dll
 C:\Users\park\Desktop\ServerStudy\obj\Debug\net8.0\ServerSt.6B3B2361.Up2Date
