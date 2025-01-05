@@ -9,13 +9,13 @@ namespace ServerStudy.Controllers;
 [ApiController]
 public class CreateAccountController : ControllerBase
 {
-    private readonly UserData _userData;
+    private readonly ApplicationDbContext _applicationDbContext;
     private readonly ILogger<CreateAccountController> _logger;
     private readonly PasswordHasher<User> _passwordHasher;
     
-    public CreateAccountController(UserData userData, ILogger<CreateAccountController> logger)
+    public CreateAccountController(ApplicationDbContext applicationDbContext, ILogger<CreateAccountController> logger)
     {
-        _userData = userData ?? throw new ArgumentNullException(nameof(userData));
+        _applicationDbContext = applicationDbContext ?? throw new ArgumentNullException(nameof(applicationDbContext));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _passwordHasher = new PasswordHasher<User>();
     }
@@ -28,20 +28,20 @@ public class CreateAccountController : ControllerBase
             return BadRequest(new { message = "유저 정보 필요" });
         }
 
-        if (_userData.Users.Any(u => u.Email == user.Email))
+        if (_applicationDbContext.Users.Any(u => u.Email == user.Email))
         {
             return Conflict(new { message = "이메일 중복" });
         }
         
-        if (_userData.Users.Any(u => u.Nickname == user.Nickname))
+        if (_applicationDbContext.Users.Any(u => u.Nickname == user.Nickname))
         {
             return Conflict(new { message = "닉네임 중복" });
         }
         
         user.Password = _passwordHasher.HashPassword(user, user.Password);
         
-        _userData.Users.Add(user);
-        await _userData.SaveChangesAsync();
+        _applicationDbContext.Users.Add(user);
+        await _applicationDbContext.SaveChangesAsync();
         
         _logger.LogInformation("New user registered: {Username}, Nickname: {Nickname}", user.Email, user.Nickname);
             
