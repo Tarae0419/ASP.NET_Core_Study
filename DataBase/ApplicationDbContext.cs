@@ -12,6 +12,8 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
 
     public DbSet<User> Users { get; set; }
     public DbSet<Clan> Clans { get; set; }
+    public DbSet<ChatRoom> ChatRooms { get; set; }
+    public DbSet<Message> Messages { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
