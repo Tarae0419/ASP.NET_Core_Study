@@ -62,7 +62,7 @@ public class ChatController : ControllerBase
         var messages = since.HasValue
             ? chatRoom.Messages.Where(m => m.Timestamp > since.Value).ToList()
             : chatRoom.Messages;
-
+        
         return Ok(messages);
     }
 
