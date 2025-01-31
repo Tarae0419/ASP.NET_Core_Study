@@ -16,6 +16,7 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<Message> Messages { get; set; }
     public DbSet<Player> Players { get; set; }
     public DbSet<Match> Matches { get; set; }
+    public DbSet<Friendship> Friendships { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -40,5 +41,17 @@ public class ApplicationDbContext : Microsoft.EntityFrameworkCore.DbContext
             .WithMany(c => c.Users)
             .HasForeignKey(m => m.ClanId)
             .OnDelete(DeleteBehavior.Cascade);
+        
+        modelBuilder.Entity<Friendship>()
+            .HasOne(f => f.Requester)
+            .WithMany()
+            .HasForeignKey(f => f.RequesterId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<Friendship>()
+            .HasOne(f => f.Addressee)
+            .WithMany()
+            .HasForeignKey(f => f.AddresseeId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }
